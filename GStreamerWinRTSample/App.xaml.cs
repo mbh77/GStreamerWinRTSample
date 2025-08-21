@@ -4,7 +4,7 @@ using MvpWuiMvvm;
 using MvpWuiMvvm.Modularity;
 using System;
 using System.Collections.Generic;
-using System.Threading.Tasks;
+using Presentation;
 
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
@@ -33,14 +33,13 @@ namespace GStreamerWinRTSample
         /// <param name="args">Details about the launch request and process.</param>
         protected override void OnLaunched(Microsoft.UI.Xaml.LaunchActivatedEventArgs args)
         {
-            _window = new MainWindow();
-            _window.Activate();
-
             base.OnLaunched(args);
         }
 
         protected override void ConfigureModuleCatalog(List<IModule> moduleCatalog)
         {
+            moduleCatalog.Add(new PresentationModule());
+
             base.ConfigureModuleCatalog(moduleCatalog);
         }
 
@@ -51,6 +50,9 @@ namespace GStreamerWinRTSample
 
         protected override void OnInitialized(IServiceProvider serviceProvider)
         {
+            _window = new MainWindow();
+            _window.Activate();
+
             base.OnInitialized(serviceProvider);
         }
     }

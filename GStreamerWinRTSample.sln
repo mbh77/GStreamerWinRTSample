@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GStreamerWinRTSample", "GSt
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvpWuiMvvm", "MvpWuiMvvm\MvpWuiMvvm.csproj", "{ED3E166A-CF06-2866-6921-AF0C4C222B1E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Presentation", "Presentation\Presentation.csproj", "{4CF7DCB0-F6D5-4DD9-8EED-EE471FDEAF55}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|ARM64 = Debug|ARM64
@@ -47,6 +49,18 @@ Global
 		{ED3E166A-CF06-2866-6921-AF0C4C222B1E}.Release|x64.Build.0 = Release|x64
 		{ED3E166A-CF06-2866-6921-AF0C4C222B1E}.Release|x86.ActiveCfg = Release|Any CPU
 		{ED3E166A-CF06-2866-6921-AF0C4C222B1E}.Release|x86.Build.0 = Release|Any CPU
+		{4CF7DCB0-F6D5-4DD9-8EED-EE471FDEAF55}.Debug|ARM64.ActiveCfg = Debug|Any CPU
+		{4CF7DCB0-F6D5-4DD9-8EED-EE471FDEAF55}.Debug|ARM64.Build.0 = Debug|Any CPU
+		{4CF7DCB0-F6D5-4DD9-8EED-EE471FDEAF55}.Debug|x64.ActiveCfg = Debug|x64
+		{4CF7DCB0-F6D5-4DD9-8EED-EE471FDEAF55}.Debug|x64.Build.0 = Debug|x64
+		{4CF7DCB0-F6D5-4DD9-8EED-EE471FDEAF55}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{4CF7DCB0-F6D5-4DD9-8EED-EE471FDEAF55}.Debug|x86.Build.0 = Debug|Any CPU
+		{4CF7DCB0-F6D5-4DD9-8EED-EE471FDEAF55}.Release|ARM64.ActiveCfg = Release|Any CPU
+		{4CF7DCB0-F6D5-4DD9-8EED-EE471FDEAF55}.Release|ARM64.Build.0 = Release|Any CPU
+		{4CF7DCB0-F6D5-4DD9-8EED-EE471FDEAF55}.Release|x64.ActiveCfg = Release|Any CPU
+		{4CF7DCB0-F6D5-4DD9-8EED-EE471FDEAF55}.Release|x64.Build.0 = Release|Any CPU
+		{4CF7DCB0-F6D5-4DD9-8EED-EE471FDEAF55}.Release|x86.ActiveCfg = Release|Any CPU
+		{4CF7DCB0-F6D5-4DD9-8EED-EE471FDEAF55}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
