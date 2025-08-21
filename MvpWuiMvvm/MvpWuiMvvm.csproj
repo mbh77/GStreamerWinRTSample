@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net8.0-windows10.0.19041.0</TargetFramework>
+    <TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion>
+    <RootNamespace>MvpWuiMvvm</RootNamespace>
+    <RuntimeIdentifiers>win-x86;win-x64;win-arm64</RuntimeIdentifiers>
+    <UseWinUI>true</UseWinUI>
+    <Platforms>AnyCPU;x64</Platforms>
+    <Nullable>disable</Nullable>
+    <VersionPrefix>1.0</VersionPrefix>
+    <YearMonth>$([System.DateTime]::UtcNow.ToString("yyMM"))</YearMonth>
+    <Day>$([System.DateTime]::UtcNow.ToString("dd"))</Day>
+    <Hour>$([System.DateTime]::UtcNow.ToString("HH"))</Hour>
+    <Minute>$([System.DateTime]::UtcNow.ToString("mm"))</Minute>
+    <UniqueKey>$([MSBuild]::Add($([MSBuild]::Add($([MSBuild]::Multiply($(Day), 2048)), $([MSBuild]::Multiply($(Hour), 64)))), $(Minute)))</UniqueKey>
+    <Version>$(VersionPrefix).$(YearMonth).$(UniqueKey)</Version>    
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="9.0.4" />
+    <PackageReference Include="Microsoft.Windows.CsWinRT" Version="2.2.0" />
+    <PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.26100.4188" />
+    <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.7.250401001" />
+  </ItemGroup>
+  
+</Project>

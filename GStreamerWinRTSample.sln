@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.14.36414.22 d17.14
+VisualStudioVersion = 17.14.36414.22
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GStreamerWinRTSample", "GStreamerWinRTSample\GStreamerWinRTSample.csproj", "{9F28699F-41CF-45B8-9877-FB30FF638A46}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvpWuiMvvm", "MvpWuiMvvm\MvpWuiMvvm.csproj", "{ED3E166A-CF06-2866-6921-AF0C4C222B1E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,18 @@ Global
 		{9F28699F-41CF-45B8-9877-FB30FF638A46}.Release|x86.ActiveCfg = Release|x86
 		{9F28699F-41CF-45B8-9877-FB30FF638A46}.Release|x86.Build.0 = Release|x86
 		{9F28699F-41CF-45B8-9877-FB30FF638A46}.Release|x86.Deploy.0 = Release|x86
+		{ED3E166A-CF06-2866-6921-AF0C4C222B1E}.Debug|ARM64.ActiveCfg = Debug|Any CPU
+		{ED3E166A-CF06-2866-6921-AF0C4C222B1E}.Debug|ARM64.Build.0 = Debug|Any CPU
+		{ED3E166A-CF06-2866-6921-AF0C4C222B1E}.Debug|x64.ActiveCfg = Debug|x64
+		{ED3E166A-CF06-2866-6921-AF0C4C222B1E}.Debug|x64.Build.0 = Debug|x64
+		{ED3E166A-CF06-2866-6921-AF0C4C222B1E}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{ED3E166A-CF06-2866-6921-AF0C4C222B1E}.Debug|x86.Build.0 = Debug|Any CPU
+		{ED3E166A-CF06-2866-6921-AF0C4C222B1E}.Release|ARM64.ActiveCfg = Release|Any CPU
+		{ED3E166A-CF06-2866-6921-AF0C4C222B1E}.Release|ARM64.Build.0 = Release|Any CPU
+		{ED3E166A-CF06-2866-6921-AF0C4C222B1E}.Release|x64.ActiveCfg = Release|x64
+		{ED3E166A-CF06-2866-6921-AF0C4C222B1E}.Release|x64.Build.0 = Release|x64
+		{ED3E166A-CF06-2866-6921-AF0C4C222B1E}.Release|x86.ActiveCfg = Release|Any CPU
+		{ED3E166A-CF06-2866-6921-AF0C4C222B1E}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
