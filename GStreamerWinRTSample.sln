@@ -11,6 +11,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Presentation", "Presentatio
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services", "Services\Services.csproj", "{CA79841B-06E3-42A7-9C42-98464D2F16AF}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infra", "Infra", "{C8D5274F-AC00-46C7-1F8D-E88E81087A52}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MediaFramework", "Infra\MediaFramework\MediaFramework.vcxproj", "{9D1F9988-B7F7-427B-BFF2-30FB908D2A7F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MediaFrameworkProjection", "Infra\MediaFrameworkProjection\MediaFrameworkProjection.csproj", "{FBC74B4E-B01E-0198-34B1-47DF290BEAB5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|ARM64 = Debug|ARM64
@@ -75,9 +81,37 @@ Global
 		{CA79841B-06E3-42A7-9C42-98464D2F16AF}.Release|x64.Build.0 = Release|Any CPU
 		{CA79841B-06E3-42A7-9C42-98464D2F16AF}.Release|x86.ActiveCfg = Release|Any CPU
 		{CA79841B-06E3-42A7-9C42-98464D2F16AF}.Release|x86.Build.0 = Release|Any CPU
+		{9D1F9988-B7F7-427B-BFF2-30FB908D2A7F}.Debug|ARM64.ActiveCfg = Debug|ARM64
+		{9D1F9988-B7F7-427B-BFF2-30FB908D2A7F}.Debug|ARM64.Build.0 = Debug|ARM64
+		{9D1F9988-B7F7-427B-BFF2-30FB908D2A7F}.Debug|x64.ActiveCfg = Debug|x64
+		{9D1F9988-B7F7-427B-BFF2-30FB908D2A7F}.Debug|x64.Build.0 = Debug|x64
+		{9D1F9988-B7F7-427B-BFF2-30FB908D2A7F}.Debug|x86.ActiveCfg = Debug|Win32
+		{9D1F9988-B7F7-427B-BFF2-30FB908D2A7F}.Debug|x86.Build.0 = Debug|Win32
+		{9D1F9988-B7F7-427B-BFF2-30FB908D2A7F}.Release|ARM64.ActiveCfg = Release|ARM64
+		{9D1F9988-B7F7-427B-BFF2-30FB908D2A7F}.Release|ARM64.Build.0 = Release|ARM64
+		{9D1F9988-B7F7-427B-BFF2-30FB908D2A7F}.Release|x64.ActiveCfg = Release|x64
+		{9D1F9988-B7F7-427B-BFF2-30FB908D2A7F}.Release|x64.Build.0 = Release|x64
+		{9D1F9988-B7F7-427B-BFF2-30FB908D2A7F}.Release|x86.ActiveCfg = Release|Win32
+		{9D1F9988-B7F7-427B-BFF2-30FB908D2A7F}.Release|x86.Build.0 = Release|Win32
+		{FBC74B4E-B01E-0198-34B1-47DF290BEAB5}.Debug|ARM64.ActiveCfg = Debug|Any CPU
+		{FBC74B4E-B01E-0198-34B1-47DF290BEAB5}.Debug|ARM64.Build.0 = Debug|Any CPU
+		{FBC74B4E-B01E-0198-34B1-47DF290BEAB5}.Debug|x64.ActiveCfg = Debug|x64
+		{FBC74B4E-B01E-0198-34B1-47DF290BEAB5}.Debug|x64.Build.0 = Debug|x64
+		{FBC74B4E-B01E-0198-34B1-47DF290BEAB5}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{FBC74B4E-B01E-0198-34B1-47DF290BEAB5}.Debug|x86.Build.0 = Debug|Any CPU
+		{FBC74B4E-B01E-0198-34B1-47DF290BEAB5}.Release|ARM64.ActiveCfg = Release|Any CPU
+		{FBC74B4E-B01E-0198-34B1-47DF290BEAB5}.Release|ARM64.Build.0 = Release|Any CPU
+		{FBC74B4E-B01E-0198-34B1-47DF290BEAB5}.Release|x64.ActiveCfg = Release|x64
+		{FBC74B4E-B01E-0198-34B1-47DF290BEAB5}.Release|x64.Build.0 = Release|x64
+		{FBC74B4E-B01E-0198-34B1-47DF290BEAB5}.Release|x86.ActiveCfg = Release|Any CPU
+		{FBC74B4E-B01E-0198-34B1-47DF290BEAB5}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{9D1F9988-B7F7-427B-BFF2-30FB908D2A7F} = {C8D5274F-AC00-46C7-1F8D-E88E81087A52}
+		{FBC74B4E-B01E-0198-34B1-47DF290BEAB5} = {C8D5274F-AC00-46C7-1F8D-E88E81087A52}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {ED4DF96F-D710-4CF1-ABD7-2D7129EC636A}

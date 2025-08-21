@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Resources">
+      <UniqueIdentifier>accd3aa8-1ba0-4223-9bbe-0c431709210b</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tga;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Generated Files">
+      <UniqueIdentifier>{926ab91d-31b4-48c3-b9a4-e681349f27f0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Streaming">
+      <UniqueIdentifier>{79d71725-d6df-4a3b-a5a2-eccad5889b21}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Player">
+      <UniqueIdentifier>{1aa48ae5-b442-4409-931a-946a939587f7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Render">
+      <UniqueIdentifier>{4b81ff0a-e41e-4121-b507-58f903336556}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="pch">
+      <UniqueIdentifier>{9f65b5de-243c-4219-9e2a-bd7395375371}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="idl">
+      <UniqueIdentifier>{899e6cc2-24c7-4ea2-8c99-d9d53f2c643f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="d3dhelpers">
+      <UniqueIdentifier>{ce21bac9-b6a1-469f-a273-60263bfaa3e4}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="$(GeneratedFilesDir)module.g.cpp" />
+    <ClCompile Include="GstWinRTPipeline.cpp">
+      <Filter>Streaming</Filter>
+    </ClCompile>
+    <ClCompile Include="GstWinRTPlayer.cpp">
+      <Filter>Player</Filter>
+    </ClCompile>
+    <ClCompile Include="MediaFoundationRecorder.cpp">
+      <Filter>Streaming</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerFrameRenderer.cpp">
+      <Filter>Render</Filter>
+    </ClCompile>
+    <ClCompile Include="pch.cpp">
+      <Filter>pch</Filter>
+    </ClCompile>
+    <ClCompile Include="GstWinRT.cpp">
+      <Filter>idl</Filter>
+    </ClCompile>
+    <ClCompile Include="FrameQueue.cpp">
+      <Filter>Render</Filter>
+    </ClCompile>
+    <ClCompile Include="StreamingFrameRenderer.cpp">
+      <Filter>Render</Filter>
+    </ClCompile>
+    <ClCompile Include="Direct3DHelperWinRT.cpp">
+      <Filter>Streaming</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="GstWinRTPipeline.h">
+      <Filter>Streaming</Filter>
+    </ClInclude>
+    <ClInclude Include="GstWinRTPlayer.h">
+      <Filter>Player</Filter>
+    </ClInclude>
+    <ClInclude Include="MediaFoundationRecorder.h">
+      <Filter>Streaming</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerFrameRenderer.h">
+      <Filter>Render</Filter>
+    </ClInclude>
+    <ClInclude Include="pch.h">
+      <Filter>pch</Filter>
+    </ClInclude>
+    <ClInclude Include="GstWinRT.h">
+      <Filter>idl</Filter>
+    </ClInclude>
+    <ClInclude Include="direct3d11.interop.h">
+      <Filter>d3dhelpers</Filter>
+    </ClInclude>
+    <ClInclude Include="d3dhelpers.h">
+      <Filter>d3dhelpers</Filter>
+    </ClInclude>
+    <ClInclude Include="FrameQueue.h">
+      <Filter>Render</Filter>
+    </ClInclude>
+    <ClInclude Include="StreamingFrameRenderer.h">
+      <Filter>Render</Filter>
+    </ClInclude>
+    <ClInclude Include="Direct3DHelperWinRT.h">
+      <Filter>Streaming</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MediaFramework.def" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="readme.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Midl Include="GstWinRT.idl">
+      <Filter>idl</Filter>
+    </Midl>
+  </ItemGroup>
+</Project>

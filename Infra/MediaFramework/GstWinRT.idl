@@ -1,0 +1,156 @@
+namespace MediaFramework
+{
+    struct StreamerData
+    {
+        String SrcVideoIP;
+        UInt32 SrcVideoPort;
+        UInt32 RecordPort;
+        Boolean FramerateMode;
+        UInt32 Framerate;
+        Boolean PipelineMode;
+        String PipelineDescription;
+    };
+
+    enum GstEventType
+    {
+        Unknown = 0,
+        RenderStateChanged = 1,
+        RecordStateChanged = 2,
+        CaptureStateChanged = 3,
+        MessageLogged = 4
+    };
+
+    enum GstPipelineState
+    {
+        GST_STATE_VOID_PENDING = 0,
+        GST_STATE_NULL = 1,
+        GST_STATE_READY = 2,
+        GST_STATE_PAUSED = 3,
+        GST_STATE_PLAYING = 4
+    };
+
+    enum GstWinRTState
+    {
+        Uninitialized, // common state (+)
+        Initialized,
+        PipelineCreated, // common state (-)
+        RenderReady, // for rendering (+)
+        Rendering,
+        RenderBuffering,
+        RenderPaused,
+        RenderStopped, // for rendering (-)
+        RecordReady, // for recording (+)
+        Recording,
+        RecordPaused,
+        RecordStopped, // for recording (-)
+        CaptureReady, // for capture (+)
+        CaptureStart,
+        CaptureEnd, // for capture (-)
+        Error
+    };
+
+    struct GstEventArgs
+    {
+        GstEventType EventType;
+        GstWinRTState OldState;
+        GstWinRTState NewState;
+        String Message;
+        Int32 Code;
+    };
+
+    enum GstPlayerEventType
+    {
+        Unknown = 0,
+        StateChanged = 1,
+        DurationChanged =2,
+        MessageLogged = 3
+    };
+
+    enum GstPlayerState
+    {
+        Uninitialized,
+        Initialized,
+        PipelineCreated,
+        Ready,
+        Playing,
+        Buffering,
+        Paused,
+        Stopped,
+        Error
+    };
+
+    struct GstPlayerEventArgs
+    {
+        GstPlayerEventType EventType;
+        GstPlayerState OldState;
+        GstPlayerState NewState;
+        String Message;
+        Double Duration;
+        Int32 Code;
+    };
+
+    delegate void GstWinRTEventHandler(GstWinRTPipeline sender, GstEventArgs args);
+    delegate void GstPlayerEventHandler(GstWinRTPlayer sender, GstPlayerEventArgs args);
+
+    runtimeclass GstWinRTPlayer
+    {
+        GstWinRTPlayer(Microsoft.UI.Dispatching.DispatcherQueue uiDispatcherQueue);
+        void Initialize(Microsoft.UI.Xaml.UIElement host, Microsoft.UI.Xaml.Controls.SwapChainPanel panel);
+        void Play(String path);
+        void Play();
+        void Pause();
+        void SeekTo(Double seconds);
+        void Stop();
+        void Close();
+        void SetLeftHalfCrop(Boolean isLeftHalfCrop);
+        Boolean IsLeftHalfCrop();
+
+        Double GetTotalDurationSeconds();
+        Double GetPositionSeconds();
+
+        event GstPlayerEventHandler GstPlayerEvent;
+    }
+
+    runtimeclass GstWinRTPipeline
+    {
+        GstWinRTPipeline(Microsoft.UI.Dispatching.DispatcherQueue uiDispatcherQueue);
+        void Initialize(StreamerData config, Microsoft.UI.Xaml.UIElement host, Microsoft.UI.Xaml.Controls.SwapChainPanel videoPanel);
+
+        void Start();
+        void Pause();
+        void Stop();
+        void Close();
+        void Capture(String path);
+        void StartRecording(String path);
+        void PauseRecording();
+        void StopRecording();
+
+        GstWinRTState GetRenderState();
+        GstWinRTState GetRecordState();
+        GstWinRTState GetCaptureState();
+        UInt64 GetRenderDelayTime();
+
+        void SetLeftHalfCrop(Boolean isLeftHalfCrop);
+        Boolean IsLeftHalfCrop();
+        void SetRenderEnable(Boolean isEnable);
+
+        event GstWinRTEventHandler GstWinRTEvent;
+    }
+
+    runtimeclass Direct3DHelperWinRT
+    {
+        Direct3DHelperWinRT(Microsoft.UI.Dispatching.DispatcherQueue uiDispatcherQueue);
+        void Clear(Microsoft.UI.Xaml.Controls.SwapChainPanel panel, Double red, Double green, Double blue, Double alpha);
+        void Dispose();
+    }
+
+    [default_interface]
+    runtimeclass GstWinRT
+    {
+        GstWinRT(Microsoft.UI.Dispatching.DispatcherQueue uiDispatcherQueue);
+        GstWinRTPipeline CreatePipeline();
+        void RemovePipeline(GstWinRTPipeline pipeline);
+        GstWinRTPlayer CreatePlayer();
+        void RemovePlayer(GstWinRTPlayer player);
+    }
+}

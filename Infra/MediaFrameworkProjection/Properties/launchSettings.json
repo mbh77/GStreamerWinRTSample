@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "MediaFrameworkProjection": {
+      "commandName": "Project",
+      "nativeDebugging": true
+    }
+  }
+}
