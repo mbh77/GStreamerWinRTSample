@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "GStreamerWinRTSample (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "GStreamerWinRTSample (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}
