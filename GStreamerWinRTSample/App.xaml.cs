@@ -2,9 +2,10 @@
 using Microsoft.UI.Xaml;
 using MvpWuiMvvm;
 using MvpWuiMvvm.Modularity;
+using Presentation;
+using Services;
 using System;
 using System.Collections.Generic;
-using Presentation;
 
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
@@ -39,6 +40,7 @@ namespace GStreamerWinRTSample
         protected override void ConfigureModuleCatalog(List<IModule> moduleCatalog)
         {
             moduleCatalog.Add(new PresentationModule());
+            moduleCatalog.Add(new ServicesModule());
 
             base.ConfigureModuleCatalog(moduleCatalog);
         }

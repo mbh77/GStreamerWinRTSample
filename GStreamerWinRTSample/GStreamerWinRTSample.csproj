@@ -42,6 +42,7 @@
   <ItemGroup>
     <ProjectReference Include="..\MvpWuiMvvm\MvpWuiMvvm.csproj" />
     <ProjectReference Include="..\Presentation\Presentation.csproj" />
+    <ProjectReference Include="..\Services\Services.csproj" />
   </ItemGroup>
 
   <!--
