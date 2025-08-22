@@ -7,5 +7,7 @@ namespace Services
     {
         void CreateSession(string address, uint port, UIElement host, SwapChainPanel videoPanel);
         void Start();
+        void Stop();
+        void CloseSession();
     }
 }
