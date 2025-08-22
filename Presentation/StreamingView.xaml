@@ -9,6 +9,17 @@
     mc:Ignorable="d">
 
     <Grid>
-        <TextBlock>Streaming</TextBlock>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="300" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid x:Name="controlGrid" Grid.Column="0">
+            
+        </Grid>
+        <Grid x:Name="videoHost" Grid.Column="1" Background="Black">
+            <Viewbox Stretch="Uniform">
+                <SwapChainPanel x:Name="videoPanel" Width="1920" Height="1080" />
+            </Viewbox>
+        </Grid>
     </Grid>
 </Page>

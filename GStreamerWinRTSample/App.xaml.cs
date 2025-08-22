@@ -6,6 +6,7 @@ using Presentation;
 using Services;
 using System;
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
 
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
@@ -15,8 +16,12 @@ namespace GStreamerWinRTSample
     /// <summary>
     /// Provides application-specific behavior to supplement the default Application class.
     /// </summary>
+
     public partial class App : WuiMvvmApp
     {
+        [DllImport("kernel32.dll", CharSet = CharSet.Unicode, SetLastError = true)]
+        private static extern bool SetDllDirectory(string lpPathName);
+
         private Window? _window;
 
         /// <summary>
@@ -25,6 +30,20 @@ namespace GStreamerWinRTSample
         /// </summary>
         public App() : base(new ServiceCollection())
         {
+            var exeFolder = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
+            if (exeFolder != null)
+            {
+                var gstreamerDir = System.IO.Path.Combine(exeFolder, "gstreamer\\bin");
+                SetDllDirectory(gstreamerDir);
+
+                var gstLibPath = System.IO.Path.GetFullPath(System.IO.Path.Combine(exeFolder, "gstreamer\\lib\\gstreamer-1.0"));
+                Environment.SetEnvironmentVariable("GST_PLUGIN_PATH", gstLibPath, EnvironmentVariableTarget.Process);
+
+                var path = Environment.GetEnvironmentVariable("PATH", EnvironmentVariableTarget.Process);
+                var gstBinPath = System.IO.Path.GetFullPath(System.IO.Path.Combine(exeFolder, "gstreamer\\bin"));
+                Environment.SetEnvironmentVariable("PATH", $"{gstBinPath};{path}", EnvironmentVariableTarget.Process);
+            }
+
             InitializeComponent();
         }
 

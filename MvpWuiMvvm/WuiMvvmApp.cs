@@ -19,7 +19,7 @@ namespace MvpWuiMvvm
         public static IServiceProvider ServiceProvider { get; private set; }
         protected IServiceCollection Services;
         protected List<IModule> ModuleCatalog = new();
-        public Window? m_window;
+        public Window m_window;
 
         public WuiMvvmApp(IServiceCollection services)
         {

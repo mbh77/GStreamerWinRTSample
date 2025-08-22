@@ -8,10 +8,12 @@
     <Platforms>AnyCPU;x64</Platforms>
   </PropertyGroup>
   <ItemGroup>
+    <PackageReference Include="Microsoft.Windows.CsWinRT" Version="2.2.0" />
     <PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.26100.4948" />
     <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.7.250606001" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Infra\MediaFrameworkProjection\MediaFrameworkProjection.csproj" />
     <ProjectReference Include="..\MvpWuiMvvm\MvpWuiMvvm.csproj" />
   </ItemGroup>
   
