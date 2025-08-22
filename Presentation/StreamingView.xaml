@@ -14,7 +14,28 @@
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
         <Grid x:Name="controlGrid" Grid.Column="0">
-            
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="3*" />
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Grid.Row="0" Grid.Column="0" Text="IP" HorizontalAlignment="Center" VerticalAlignment="Center" />
+            <TextBox Grid.Row="0" Grid.Column="1" Text="{x:Bind ViewModel.Address, Mode=TwoWay}" Margin="5, 1" VerticalAlignment="Center" />
+
+            <TextBlock Grid.Row="1" Grid.Column="0" Text="Port" Width="auto" Height="auto" HorizontalAlignment="Center" VerticalAlignment="Center" />
+            <TextBox Grid.Row="1" Grid.Column="1" Text="{x:Bind ViewModel.Port, Mode=TwoWay}" Margin="5, 1" VerticalAlignment="Center" />
+
+            <Button Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Content="Start Streaming"
+                    Click="{x:Bind ViewModel.OnStartStreamingClicked}" Margin="1" HorizontalAlignment="Stretch"/>
+            <Button Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Content="Stop Streaming" 
+                    Click="{x:Bind ViewModel.OnStopStreamingClicked}"  Margin="1" HorizontalAlignment="Stretch"/>
         </Grid>
         <Grid x:Name="videoHost" Grid.Column="1" Background="Black">
             <Viewbox Stretch="Uniform">

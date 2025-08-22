@@ -30,6 +30,7 @@ namespace Presentation
             InitializeComponent();
             NavigationCacheMode = NavigationCacheMode.Required;
             ViewModel = Ioc.Default.GetService<StreamingViewModel>();
+            ViewModel.SetVideoHostAndPanel(videoHost, videoPanel);
         }
     }
 }

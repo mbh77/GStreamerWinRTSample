@@ -6,6 +6,7 @@ using Presentation;
 using Services;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Runtime.InteropServices;
 
 // To learn more about WinUI, the WinUI project structure,
@@ -43,6 +44,12 @@ namespace GStreamerWinRTSample
                 var gstBinPath = System.IO.Path.GetFullPath(System.IO.Path.Combine(exeFolder, "gstreamer\\bin"));
                 Environment.SetEnvironmentVariable("PATH", $"{gstBinPath};{path}", EnvironmentVariableTarget.Process);
             }
+
+            var local = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
+            var regDir = System.IO.Path.Combine(local, "GStreamerWinRTSample", "gstreamer", "1.0");
+            Directory.CreateDirectory(regDir);
+            var regFile = Path.Combine(regDir, $"registry_{Environment.ProcessId}.bin");
+            Environment.SetEnvironmentVariable("GST_REGISTRY", regFile, EnvironmentVariableTarget.Process);
 
             InitializeComponent();
         }
