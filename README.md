@@ -1,5 +1,17 @@
 # GStreamerWinRTSample
-WinUI3, Direct3D11, GStreamer를 사용한 스트리밍 재생 샘플 코드
+이 샘플은 Direct3D11 + GStreamer 스트리밍 재생을 중심으로 구현했습니다.
+UI에 렌더링 부분은 SwapChainPanel 기반의 D3D11 렌더링을 사용합니다.
+또한, 애플리케이션 구조를 모듈화하고 의존성 주입(DI)을 지원하기 위해 CommunityToolkit.Mvvm과 Microsoft.Extensions.DependencyInjection을 얹은 경량 MVVM 모듈화 코드를 포함합니다.
+CaptureStreamingServiceSample과 연동하여 저지연 스트리밍 동작을 확인할 수 있습니다.
+
+### 특징
+1. SwapChainPanel 렌더링: DXGI SwapChain으로 GPU 프레임 저지연 표시
+2. GPU 직접 사용 (D3D11): d3d11h264dec → d3d11convert/upload → D3D11Texture2D
+3. 경량 MVVM 모듈화 지원
+  - WuiMvvmApp이 DI 컨테이너(ServiceCollection → ServiceProvider)를 초기화
+  - Module 인터페이스 기반으로 서비스 등록(RegisterTypes)과 초기화(OnInitialized)를 각 모듈에 위임
+  - Ioc.Default.ConfigureServices(ServiceProvider)를 통해 CommunityToolkit.Mvvm과 연결
+  - 확장 시 새로운 모듈만 ModuleCatalog에 추가하면 됨 → 유연한 확장성 확보
 
 ### GStreamerWinRTSample 빌드 시 Unpackaged 로 설정
 WinUI3 프로그램은 기본적으로 윈도우 스토어 배포를 목적으로 하는 packaged 어플리케이션 프로젝트입니다.
