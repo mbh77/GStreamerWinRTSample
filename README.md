@@ -4,7 +4,9 @@ UI 렌더링 부분은 SwapChainPanel 기반의 D3D11 렌더링을 사용하였�
 또한, 애플리케이션 구조를 모듈화하고 의존성 주입(DI)을 지원하기 위해 CommunityToolkit.Mvvm과 Microsoft.Extensions.DependencyInjection을 얹은 경량 MVVM 모듈화 코드를 포함합니다.
 
 CaptureStreamingServiceSample과 연동하여 저지연 스트리밍 동작을 확인할 수 있습니다.
-![스트리밍 시연 영상](https://github.com/mbh77/GStreamerWinRTSample/releases/download/for-asset/20250823_105536.mp4)
+https://github.com/user-attachments/assets/96c1c594-21f6-438b-bbb1-8f2123b807c1
+
+
 
 ### 특징
 * SwapChainPanel 렌더링: DXGI SwapChain으로 GPU 프레임 저지연 디스플레이
