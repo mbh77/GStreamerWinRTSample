@@ -8,10 +8,10 @@ CaptureStreamingServiceSample과 연동하여 저지연 스트리밍 동작을 �
 1. SwapChainPanel 렌더링: DXGI SwapChain으로 GPU 프레임 저지연 표시
 2. GPU 직접 사용 (D3D11): d3d11h264dec → d3d11convert/upload → D3D11Texture2D
 3. 경량 MVVM 모듈화 지원
-  - WuiMvvmApp이 DI 컨테이너(ServiceCollection → ServiceProvider)를 초기화
-  - Module 인터페이스 기반으로 서비스 등록(RegisterTypes)과 초기화(OnInitialized)를 각 모듈에 위임
-  - Ioc.Default.ConfigureServices(ServiceProvider)를 통해 CommunityToolkit.Mvvm과 연결
-  - 확장 시 새로운 모듈만 ModuleCatalog에 추가하면 됨 → 유연한 확장성 확보
+  1. WuiMvvmApp이 DI 컨테이너(ServiceCollection → ServiceProvider)를 초기화
+  2. Module 인터페이스 기반으로 서비스 등록(RegisterTypes)과 초기화(OnInitialized)를 각 모듈에 위임
+  3. Ioc.Default.ConfigureServices(ServiceProvider)를 통해 CommunityToolkit.Mvvm과 연결
+  4. 확장 시 새로운 모듈만 ModuleCatalog에 추가하면 됨 → 유연한 확장성 확보
 
 ### GStreamerWinRTSample 빌드 시 Unpackaged 로 설정
 WinUI3 프로그램은 기본적으로 윈도우 스토어 배포를 목적으로 하는 packaged 어플리케이션 프로젝트입니다.
