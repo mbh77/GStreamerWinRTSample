@@ -5,8 +5,8 @@ UI 렌더링 부분은 SwapChainPanel 기반의 D3D11 렌더링을 사용하였�
 CaptureStreamingServiceSample과 연동하여 저지연 스트리밍 동작을 확인할 수 있습니다.
 
 ### 특징
-* SwapChainPanel 렌더링: DXGI SwapChain으로 GPU 프레임 저지연 표시
-* GPU 직접 사용 (D3D11): d3d11h264dec → d3d11convert/upload → D3D11Texture2D
+* SwapChainPanel 렌더링: DXGI SwapChain으로 GPU 프레임 저지연 디스플레이
+* GPU 리소스 직접 사용 (D3D11): d3d11h264dec → d3d11convert/upload → D3D11Texture2D
 * 경량 MVVM 모듈화 지원
   * WuiMvvmApp이 DI 컨테이너(ServiceCollection → ServiceProvider)를 초기화
   * Module 인터페이스 기반으로 서비스 등록(RegisterTypes)과 초기화(OnInitialized)를 각 모듈에 위임
