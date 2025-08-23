@@ -2,7 +2,9 @@
 이 샘플은 Direct3D11 + GStreamer 스트리밍 재생을 중심으로 구현했습니다.
 UI 렌더링 부분은 SwapChainPanel 기반의 D3D11 렌더링을 사용하였고 이를 위해 WinUI3를 사용하였습니다.
 또한, 애플리케이션 구조를 모듈화하고 의존성 주입(DI)을 지원하기 위해 CommunityToolkit.Mvvm과 Microsoft.Extensions.DependencyInjection을 얹은 경량 MVVM 모듈화 코드를 포함합니다.
+
 CaptureStreamingServiceSample과 연동하여 저지연 스트리밍 동작을 확인할 수 있습니다.
+![스트리밍 시연 영상](https://github.com/mbh77/GStreamerWinRTSample/releases/download/for-asset/20250823_105536.mp4)
 
 ### 특징
 * SwapChainPanel 렌더링: DXGI SwapChain으로 GPU 프레임 저지연 디스플레이
